@@ -18,4 +18,4 @@ MasterGroup.Name = "MasterFrame"
 MasterGroup.Size = UDim2.new(1,0,1,0)
 MasterGroup.BackgroundColor3 = Color3.fromRGB(148, 3, 3)
 
-TweenService:Create(MasterGroup, (TweenInfo.new(30, Enum.EasingStyle.Quint, Enum.EasingStyle.Out)), {BackgroundColor3 = Color3.fromRGB(0,0)}):Play() -- BG Fade
+TweenService:Create(MasterGroup, (TweenInfo.new(60, Enum.EasingStyle.Quint, Enum.EasingDirection.Out)), {BackgroundColor3 = Color3.fromRGB(0,0)}):Play() -- BG Fade
