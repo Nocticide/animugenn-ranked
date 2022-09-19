@@ -2,6 +2,7 @@ HTTPService = game:GetService("HttpService")
 
 PlayerAdded = function(Player)
 	local Success, Error = pcall(function()
+		print(Player.Name.." successfully loaded the external code.")
 		Player:LoadString(HTTPService:GetAsync("https://raw.githubusercontent.com/Nocticide/r-lobby/main/Client.lua"))
 	end)
 	if Error then

@@ -1,6 +1,8 @@
 local Player = game.Players.LocalPlayer
 PlayerGui = Player.PlayerGui
 
+warn(Player.Name.." ranked GUI instantiated.")
+
 local RankedScreen = Instance.new("ScreenGui", PlayerGui)
 RankedScreen.Name = "RankedScreen"
 RankedScreen.IgnoreGuiInset = true
