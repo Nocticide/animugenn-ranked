@@ -1,6 +1,14 @@
 HTTPService = game:GetService("HttpService")
 
-game.Players.PlayerAdded:Connect(function(Player)
-    game:GetService("ReplicatedStorage").Pass:FireClient(Player, loadstring(HTTPService:GetAsync("https://raw.githubusercontent.com/Nocticide/r-lobby/main/Client.lua"))())
-    warn(Player.Name)
-end)
+PlayerAdded = function(Player)
+	local Success, Error = pcall(function()
+		Player:LoadString(HTTPService:GetAsync("https://raw.githubusercontent.com/Nocticide/r-lobby/main/Client.lua"))
+	end)
+	if Error then
+		print(Player.Name.." failed to load the external code.")
+	end
+end
+
+game.Players.PlayerAdded:Connect(PlayerAdded)
+repeat task.wait() until game.Players:FindFirstChildOfClass("Player")
+PlayerAdded(game.Players:FindFirstChildOfClass("Player"))
