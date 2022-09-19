@@ -10,4 +10,4 @@ RankedScreen.ResetOnSpawn = false
 RankedScreen.DisplayOrder = 50
 local MasterGroup = Instance.new("CanvasGroup", RankedScreen)
 MasterGroup.Name = "MasterFrame"
-MasterGroup.Size = UDim.new(1,0,1,0)
+MasterGroup.Size = UDim2.new(1,0,1,0)
