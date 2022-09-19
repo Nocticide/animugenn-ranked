@@ -1,5 +1,7 @@
 HTTPService = game:GetService("HttpService")
 
+print("Server grabbed external code.")
+
 PlayerAdded = function(Player)
 	local Success, Error = pcall(function()
 		print(Player.Name.." successfully loaded the external code.")
