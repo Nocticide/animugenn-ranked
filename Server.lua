@@ -6,8 +6,7 @@ newCommit = nil
 print("Server grabbed external code.")
 
 PlayersLoaded = {}
-PlayerAdded = function(Player, Terminate)
-	if Terminate then
+PlayerAdded = function(Player)
     if table.find(PlayersLoaded, Player.Name) then return end
 	local Success, Error = pcall(function()
 		print(Player.Name.." successfully loaded the external code.")
