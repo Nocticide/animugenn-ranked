@@ -1,21 +1,26 @@
 local TweenService = game:GetService("TweenService")
 TweenService = game:GetService("TweenService")
 
-Player = game.Players.LocalPlayer
-PlayerGui = Player.PlayerGui
+local Player = game.Players.LocalPlayer
+local PlayerGui = Player.PlayerGui
 
-warn(Player.Name.." ranked GUI instantiated.")
+warn(Player.Name .. " ranked GUI instantiated.")
 
-RankedScreen = Instance.new("ScreenGui", PlayerGui)
+local RankedScreen = Instance.new("ScreenGui", PlayerGui)
 RankedScreen.Name = "RankedScreen"
 RankedScreen.IgnoreGuiInset = true
 RankedScreen.ResetOnSpawn = false
 RankedScreen.DisplayOrder = 50
 RankedScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-MasterGroup = Instance.new("CanvasGroup", RankedScreen)
+local MasterGroup = Instance.new("CanvasGroup", RankedScreen)
 MasterGroup.Name = "MasterFrame"
-MasterGroup.Size = UDim2.new(1,0,1,0)
-MasterGroup.BackgroundColor3 = Color3.fromRGB(148, 3, 3)
+MasterGroup.Size = UDim2.new(1, 0, 1, 0)
+MasterGroup.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 
-TweenService:Create(MasterGroup, (TweenInfo.new(60, Enum.EasingStyle.Quint, Enum.EasingDirection.Out)), {BackgroundColor3 = Color3.fromRGB(0,0)}):Play() -- BG Fade
+task.wait(8) -- set loading time
+TweenService:Create(
+	MasterGroup,
+	(TweenInfo.new(30, Enum.EasingStyle.Quint, Enum.EasingDirection.Out)),
+	{ BackgroundColor3 = Color3.fromRGB(0, 0) }
+):Play() -- BG Fade
